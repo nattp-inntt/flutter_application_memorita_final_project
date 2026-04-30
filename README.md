@@ -1,3 +1,3 @@
-# project_memorita
+# Project Memorita
 
 A appliaction about create diary memory.
