@@ -87,13 +87,14 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16),
           ),
-          title: const Text(
+          title: Text(
             'Delete Memory',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              color: Theme.of(context).textTheme.bodyLarge?.color,),
           ),
-          content: const Text(
+          content:  Text(
             'Are you sure you want to delete this memory? This action cannot be undone.',
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
           ),
           actions: [
             TextButton(
@@ -168,9 +169,9 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
 
             return AlertDialog(
               backgroundColor: Theme.of(context).cardColor,
-              title: const Text(
+              title: Text(
                 'Edit Memory',
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(color: Theme.of(context).textTheme.bodyLarge?.color),
               ),
               content: SingleChildScrollView(
                 child: Column(
