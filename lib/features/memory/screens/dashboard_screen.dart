@@ -47,6 +47,20 @@ class _DashboardScreenState extends State<DashboardScreen> {
     setState(() {});
   }
 
+  String _getGreeting() {
+    final hour = DateTime.now().hour;
+
+    if (hour >= 5 && hour < 12) {
+      return "Good Morning 🌅";
+    } else if (hour >= 12 && hour < 17) {
+      return "Good Afternoon ☀️";
+    } else if (hour >= 17 && hour < 21) {
+      return "Good Evening 🌆";
+    } else {
+      return "Good Night 🌙";
+    }
+  }
+
   Map<DateTime, List<Memory>> groupByDay(List<Memory> memories) {
     final Map<DateTime, List<Memory>> map = {};
 
@@ -83,10 +97,10 @@ class _DashboardScreenState extends State<DashboardScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Memorita",
+                  _getGreeting(),
                   style: theme.textTheme.titleLarge?.copyWith(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 22,
                   ),
                 ),
 
@@ -287,7 +301,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ],
           ),
           child: SizedBox(
-            height: MediaQuery.of(context).size.height * 0.4,
+            height: MediaQuery.of(context).size.height * 0.5,
             child: TableCalendar(
               firstDay: DateTime(2020),
               lastDay: DateTime(2100),
@@ -343,7 +357,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 },
               ),
               calendarFormat: CalendarFormat.month,
-              rowHeight: 40,
+              rowHeight: 38,
               availableCalendarFormats: const {
                 CalendarFormat.month: 'Month',
               },

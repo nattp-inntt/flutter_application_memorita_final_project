@@ -25,10 +25,10 @@ class _MainNavigationState extends State<MainNavigation> {
           });
         },
       ),
-      const HomeScreen(),
+      const TimelineScreen(),
       const SearchScreen(),
       const SettingsScreen(),
-      StatsScreen(),
+      const StatsScreen(),
     ];
 
     return Scaffold(

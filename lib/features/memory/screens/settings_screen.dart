@@ -78,7 +78,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               children: [
                 Text("Memorita - Life Archive"),
                 SizedBox(height: 4),
-                Text("Version 0.9.9"),
+                Text("Version 1.0.2"),
                 SizedBox(height: 4),
                 Text("Developed by Memorita Team"),
               ],
