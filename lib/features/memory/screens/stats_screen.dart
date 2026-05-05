@@ -241,7 +241,7 @@ class _StatsScreenState extends State<StatsScreen> {
     return Container(
       padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.5),
+        color: color.withValues(alpha: 0.5),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
@@ -289,10 +289,10 @@ class _StatsScreenState extends State<StatsScreen> {
       height: 200,
       child: Container(
         decoration: BoxDecoration(
-          color: onSurface.withOpacity(0.03),
+          color: onSurface.withValues(alpha: 0.03),
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: onSurface.withOpacity(0.12),
+            color: onSurface.withValues(alpha: 0.12),
           ),
         ),
         child: Center(
@@ -302,13 +302,13 @@ class _StatsScreenState extends State<StatsScreen> {
               Icon(
                 Icons.pie_chart_outline,
                 size: 40,
-                color: onSurface.withOpacity(0.4),
+                color: onSurface.withValues(alpha: 0.4),
               ),
               const SizedBox(height: 8),
               Text(
                 text,
                 style: TextStyle(
-                  color: onSurface.withOpacity(0.6),
+                  color: onSurface.withValues(alpha: 0.6),
                 ),
               ),
             ],
@@ -326,10 +326,10 @@ class _StatsScreenState extends State<StatsScreen> {
     return Container(
       padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        color: onSurface.withOpacity(0.03),
+        color: onSurface.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: onSurface.withOpacity(0.12),
+          color: onSurface.withValues(alpha: 0.12),
         ),
       ),
       child: Column(
@@ -338,7 +338,7 @@ class _StatsScreenState extends State<StatsScreen> {
         children: [
           Icon(
             icon,
-            color: Colors.white.withOpacity(0.4),
+            color: Colors.white.withValues(alpha: 0.4),
             size: 22,
           ),
 
@@ -350,7 +350,7 @@ class _StatsScreenState extends State<StatsScreen> {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: onSurface.withOpacity(0.7),
+                  color: onSurface.withValues(alpha: 0.7),
                 ),
               ),
               const SizedBox(height: 4),
@@ -358,7 +358,7 @@ class _StatsScreenState extends State<StatsScreen> {
                 title,
                 style: TextStyle(
                   fontSize: 11,
-                  color: onSurface.withOpacity(0.7),
+                  color: onSurface.withValues(alpha: 0.7),
                 ),
               ),
             ],

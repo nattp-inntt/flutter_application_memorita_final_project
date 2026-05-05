@@ -72,7 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               gradient: LinearGradient(
                 colors: [
                   theme.primaryColor,
-                  theme.primaryColor.withOpacity(0.8),
+                  theme.primaryColor.withValues(alpha: 0.8),
                 ],
               ),
               borderRadius: const BorderRadius.vertical(
@@ -275,11 +275,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         return Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: theme.cardColor.withOpacity(theme.brightness == Brightness.dark ? 0.12 : 0.95),
+            color: theme.cardColor.withValues(alpha: theme.brightness == Brightness.dark ? 0.12 : 0.95),
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
-                color: theme.shadowColor.withOpacity(0.12),
+                color: theme.shadowColor.withValues(alpha: 0.12),
                 blurRadius: 18,
                 spreadRadius: 1,
                 offset: const Offset(0, 8),
@@ -287,7 +287,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
             ],
           ),
           child: SizedBox(
-            height: 350, // 🔥 IMPORTANT (prevents overflow)
+            height: MediaQuery.of(context).size.height * 0.4,
             child: TableCalendar(
               firstDay: DateTime(2020),
               lastDay: DateTime(2100),
@@ -306,7 +306,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 defaultTextStyle: theme.textTheme.bodyMedium ?? const TextStyle(),
                 weekendTextStyle: theme.textTheme.bodyMedium ?? const TextStyle(),
                 todayDecoration: BoxDecoration(
-                  color: theme.primaryColor.withOpacity(0.3),
+                  color: theme.primaryColor.withValues(alpha: 0.3),
                   shape: BoxShape.circle,
                 ),
                 selectedDecoration: BoxDecoration(
@@ -323,7 +323,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     return Container(
                       margin: const EdgeInsets.all(6),
                       decoration: BoxDecoration(
-                        color: getColor(mood ?? 'neutral').withOpacity(0.4),
+                        color: getColor(mood ?? 'neutral').withValues(alpha: 0.4),
                         shape: BoxShape.circle,
                       ),
                       child: Center(

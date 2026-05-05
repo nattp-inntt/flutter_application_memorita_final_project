@@ -274,9 +274,9 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).cardColor.withOpacity(0.9),
+                          color: Theme.of(context).cardColor.withValues(alpha: 0.9),
                           borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: Colors.grey.withOpacity(0.2)),
+                          border: Border.all(color: Colors.grey.withValues(alpha: 0.2)),
                         ),
                         child: const Text('No images attached'),
                       ),
@@ -393,7 +393,7 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
                           end: Alignment.bottomCenter,
                           colors: [
                             Colors.transparent,
-                            Colors.black.withOpacity(0.45),
+                            Colors.black.withValues(alpha: 0.45),
                           ],
                         ),
                       ),
@@ -439,7 +439,7 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.08),
+                    color: Colors.black.withValues(alpha: 0.08),
                     blurRadius: 20,
                     offset: const Offset(0, 8),
                   ),
@@ -453,7 +453,7 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                         decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor.withOpacity(0.1),
+                          color: Theme.of(context).primaryColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Row(
