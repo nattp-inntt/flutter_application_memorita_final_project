@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../../../core/constants/themes.dart';
 import '../../../data/models/memory_model.dart';
 
 class StatsScreen extends StatefulWidget {
@@ -90,9 +91,13 @@ class _StatsScreenState extends State<StatsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
         elevation: 0,
         centerTitle: false,
         title: Text(

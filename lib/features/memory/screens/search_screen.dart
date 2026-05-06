@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/constants/themes.dart';
 import '../../../data/models/memory_model.dart';
 import '../../../data/repositories/memory_repository.dart';
 import '../../../routes/app_routes.dart';
@@ -186,8 +187,9 @@ class _SearchScreenState extends State<SearchScreen> {
       spans.add(TextSpan(
         text: text.substring(index, index + query.length),
         style: TextStyle(
-          backgroundColor:
-              Theme.of(context).primaryColor.withValues(alpha: 0.3),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkTimeline
+            : AppColors.lightTimeline,
           fontWeight: FontWeight.w600,
         ),
       ));
@@ -204,9 +206,13 @@ class _SearchScreenState extends State<SearchScreen> {
     final theme = Theme.of(context);
 
     return Scaffold(
-      backgroundColor: theme.scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+        ?AppColors.darkTimeline
+        :AppColors.lightTimeline,
       appBar: AppBar(
-        backgroundColor: theme.scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
         elevation: 0,
         centerTitle: false,
         title: Text(

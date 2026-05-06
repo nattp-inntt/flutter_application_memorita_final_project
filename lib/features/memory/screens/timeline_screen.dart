@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import '../../../core/constants/themes.dart';
 import '../../../data/models/memory_model.dart';
 import '../../../routes/app_routes.dart';
 import '../../../shared/widgets/universal_image_provider.dart';
@@ -70,9 +71,13 @@ class TimelineScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
         elevation: 0,
         centerTitle: false,
         title: Text(
@@ -118,8 +123,13 @@ class TimelineScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, AppRoutes.addMemory),
-        backgroundColor: Theme.of(context).primaryColor,
-        child: const Icon(Icons.add, color: Colors.white),
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
+        child: Icon(Icons.add, 
+          color: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.lightTimeline
+          : AppColors.darkTimeline,),
       ),
     );
   }

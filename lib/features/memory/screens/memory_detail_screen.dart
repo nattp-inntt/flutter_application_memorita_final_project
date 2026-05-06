@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import '../../../core/constants/themes.dart';
 import '../../../data/models/memory_model.dart';
 import '../../../data/repositories/memory_repository.dart';
 import '../../../shared/widgets/universal_image_provider.dart';
@@ -97,7 +98,9 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
     final confirm = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        backgroundColor: Theme.of(context).cardColor,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         title: Text(
           'Delete Memory',
@@ -170,7 +173,9 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
               '${d.day}/${d.month}/${d.year}';
 
           return AlertDialog(
-            backgroundColor: Theme.of(context).cardColor,
+            backgroundColor: Theme.of(context).brightness == Brightness.dark
+                ? AppColors.darkTimeline
+                : AppColors.lightTimeline,
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
             title: Text(
@@ -373,9 +378,13 @@ class _MemoryDetailScreenState extends State<MemoryDetailScreen> {
     final moodColor = getMoodColor(memory.mood);
 
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Theme.of(context).brightness == Brightness.dark
+          ? AppColors.darkTimeline
+          : AppColors.lightTimeline,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Theme.of(context).brightness == Brightness.dark
+            ? AppColors.darkTimeline
+            : AppColors.lightTimeline,
         elevation: 0,
         centerTitle: true,
         title: const Text('Memory Detail'),
