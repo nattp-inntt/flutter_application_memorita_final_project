@@ -97,7 +97,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  _getGreeting(),
+                  '${_getGreeting()} Welcome back!',
                   style: theme.textTheme.titleLarge?.copyWith(
                     color: Colors.white,
                     fontSize: 22,
@@ -289,11 +289,16 @@ class _DashboardScreenState extends State<DashboardScreen> {
         return Container(
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
-            color: theme.cardColor.withValues(alpha: theme.brightness == Brightness.dark ? 0.12 : 0.95),
+            color: theme.brightness == Brightness.dark
+                ? const Color(0xFF1E1E2E)  // solid dark card colour
+                : theme.cardColor,
             borderRadius: BorderRadius.circular(20),
+            border: theme.brightness == Brightness.dark
+                ? Border.all(color: Colors.white.withValues(alpha: 0.06))
+                : null,
             boxShadow: [
               BoxShadow(
-                color: theme.shadowColor.withValues(alpha: 0.12),
+                color: Colors.black.withValues(alpha: 0.18),
                 blurRadius: 18,
                 spreadRadius: 1,
                 offset: const Offset(0, 8),
