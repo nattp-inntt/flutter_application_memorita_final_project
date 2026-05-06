@@ -194,7 +194,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
                   title: const Text('Version'),
                   trailing: Text(
-                    '1.0.3',
+                    '1.0.5',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Theme.of(context)
                               .textTheme
