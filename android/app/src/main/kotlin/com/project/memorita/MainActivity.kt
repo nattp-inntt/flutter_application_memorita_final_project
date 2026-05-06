@@ -1,4 +1,4 @@
-package com.example.flutter_application_memorita_final_project
+package com.project.memorita
 
 import io.flutter.embedding.android.FlutterActivity
 

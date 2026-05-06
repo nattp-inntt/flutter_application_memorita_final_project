@@ -124,7 +124,7 @@ class AppTheme {
       cardColor: AppColors.lightCard,
 
       colorScheme: const ColorScheme.light(
-        primary: AppColors.primary,
+        primary: Color(0xFF6C63FF),
         surface: AppColors.lightCard,
         onSurface: Colors.black87,
       ),
